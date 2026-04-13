@@ -18,7 +18,7 @@
     }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--white); font-family: var(--sans); font-weight: 300; min-height: 100vh; overflow-x: hidden; }
- 
+
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.6rem 2.4rem; }
     nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.9) 0%, transparent 100%); pointer-events: none; }
@@ -26,11 +26,11 @@
     .nav-links { display: flex; gap: 2rem; position: relative; z-index: 1; }
     .nav-links a { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warm); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--white); }
- 
+
     /* PAGES */
     .page { display: none; min-height: 100vh; }
     .page.active { display: block; }
- 
+
     /* HOME — masonry */
     #page-home { padding-top: 0; }
     .home-grid { columns: 3; column-gap: 3px; }
@@ -43,10 +43,10 @@
     .home-grid-item:hover .overlay { background: rgba(10,10,10,0.35); }
     .home-grid-item .overlay span { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--white); opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s; }
     .home-grid-item:hover .overlay span { opacity: 1; transform: translateY(0); }
- 
+
     /* WORK PAGE */
     #page-work { padding-top: 7rem; }
- 
+
     /* Thumbnail grid — only contains .work-item elements */
     .work-thumb-grid {
       display: grid;
@@ -55,7 +55,7 @@
     }
     @media (max-width: 768px) { .work-thumb-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .work-thumb-grid { grid-template-columns: 1fr; } }
- 
+
     .work-item { position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 4/3; background: #111; }
     .work-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
     .work-item:hover img { transform: scale(1.05); }
@@ -65,7 +65,7 @@
     .work-item .open-indicator { position: absolute; top: 1rem; right: 1rem; width: 26px; height: 26px; border: 1px solid rgba(245,242,238,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 16px; line-height: 1; opacity: 0; transition: opacity 0.3s, transform 0.4s; }
     .work-item:hover .open-indicator { opacity: 1; }
     .work-item.open .open-indicator { opacity: 1; transform: rotate(45deg); }
- 
+
     /* Gallery panel — lives OUTSIDE the thumb grid, full width */
     .gallery-panel { max-height: 0; overflow: hidden; transition: max-height 0.7s cubic-bezier(0.25,0.46,0.45,0.94); background: #0f0f0f; }
     .gallery-panel.open { max-height: 3000px; }
@@ -76,7 +76,7 @@
     .gallery-inner img:hover { opacity: 0.85; }
     .gallery-close { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1.2rem; cursor: pointer; color: var(--mid); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; border-top: 1px solid rgba(255,255,255,0.05); }
     .gallery-close:hover { color: var(--white); }
- 
+
     /* CONTACT PAGE */
     #page-contact { padding-top: 7rem; display: none; }
     #page-contact.active { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
@@ -99,14 +99,14 @@
     .service-item h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; font-style: italic; color: var(--white); margin-bottom: 0.5rem; }
     .service-item p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
     .service-item .service-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; margin-top: 1rem; }
- 
+
     /* Shared footer */
     .site-footer { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; padding: 4rem 2.4rem; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 3px; }
     @media (max-width: 640px) { .site-footer { grid-template-columns: 1fr; gap: 2.5rem; } }
     .site-footer h4 { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.8rem; }
     .site-footer p, .site-footer a { font-size: 0.88rem; color: var(--warm); line-height: 1.8; text-decoration: none; display: block; }
     .site-footer a:hover { color: var(--white); }
- 
+
     /* Fade in */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
     .page.active .home-grid-item { animation: fadeUp 0.5s ease both; }
@@ -116,7 +116,7 @@
     .page.active .home-grid-item:nth-child(4){animation-delay:0.16s}
     .page.active .home-grid-item:nth-child(5){animation-delay:0.20s}
     .page.active .home-grid-item:nth-child(6){animation-delay:0.24s}
- 
+
     @media (max-width: 480px) {
       nav { padding: 1.2rem 1.4rem; } .nav-links { gap: 1.2rem; }
       .contact-left { padding: 2rem 1.4rem; }
@@ -126,7 +126,7 @@
   </style>
 </head>
 <body>
- 
+
 <nav>
   <a class="nav-logo" href="#" onclick="showPage('home');return false;">claws</a>
   <div class="nav-links">
@@ -134,7 +134,7 @@
     <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
   </div>
 </nav>
- 
+
 <!-- ══════ HOME ══════ -->
 <div id="page-home" class="page active">
   <div class="home-grid">
@@ -143,7 +143,7 @@
     <div class="home-grid-item"><img src="images/friends-of-ham/DSC04515.jpg" alt="Friends of Ham" loading="lazy"/><div class="overlay"><span>Friends of Ham</span></div></div>
     <div class="home-grid-item"><img src="images/galipette-cidre/Spingingbottle2-HD.gif" alt="Galipette Cidre" loading="lazy"/><div class="overlay"><span>Galipette Cidre</span></div></div>
     <div class="home-grid-item"><img src="images/friends-of-ham/DSC02713.jpg" alt="Friends of Ham" loading="lazy"/><div class="overlay"><span>Friends of Ham</span></div></div>
-    <div class="home-grid-item"><img src="images/mama-li/Mama Li 1141.jpg" alt="Mama Li" loading="lazy"/><div class="overlay"><span>Mama Li</span></div></div>
+    <div class="home-grid-item"><img src="images/mama-li/Mama Li Jan - Pro-Capture One 1141.jpg" alt="Mama Li" loading="lazy"/><div class="overlay"><span>Mama Li</span></div></div>
     <div class="home-grid-item"><img src="images/shop-cuvee/DSC06237.jpg" alt="Shop Cuvée" loading="lazy"/><div class="overlay"><span>Shop Cuvée</span></div></div>
     <div class="home-grid-item"><img src="images/chabuddy-sobe/SoBe Burger - Chabuddy GDSC02796.jpg" alt="Chabuddy G × SoBe Burger" loading="lazy"/><div class="overlay"><span>Chabuddy G × SoBe Burger</span></div></div>
     <div class="home-grid-item"><img src="images/mikos-gyros/Pro-Capture One 2352.jpg" alt="Mikos Gyros" loading="lazy"/><div class="overlay"><span>Mikos Gyros</span></div></div>
@@ -167,15 +167,15 @@
     <div><h4>Contact</h4><p>London · Leeds · Yorkshire</p><a href="/cdn-cgi/l/email-protection#bad9d6dbcfded3dbc3d3cedbd1d6dbcdc8dfd4d9dffaddd7dbd3d694d9d5d7"><span class="__cf_email__" data-cfemail="57343b3622333e362e3e23363c3b3620253239343217303a363e3b7934383a">[email&#160;protected]</span></a><a href="https://wa.me/message/SMGCFNEACSWMI1" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
   </footer>
 </div>
- 
+
 <!-- ══════ WORK ══════ -->
 <div id="page-work" class="page">
- 
+
   <!-- ALL THUMBNAILS in one clean grid -->
   <div class="work-thumb-grid">
     <div class="work-item" onclick="toggleGallery('friends-of-ham',this)"><img src="images/friends-of-ham/DSC04552.jpg" alt="Friends of Ham" loading="lazy"/><div class="work-item-label"><h3>Friends of Ham</h3></div><div class="open-indicator">+</div></div>
     <div class="work-item" onclick="toggleGallery('galipette',this)"><img src="images/galipette/DSC06991.jpg" alt="Galipette" loading="lazy"/><div class="work-item-label"><h3>Galipette</h3></div><div class="open-indicator">+</div></div>
-    <div class="work-item" onclick="toggleGallery('mama-li',this)"><img src="images/mama-li/Mama Li 1141.jpg" alt="Mama Li" loading="lazy"/><div class="work-item-label"><h3>Mama Li</h3></div><div class="open-indicator">+</div></div>
+    <div class="work-item" onclick="toggleGallery('mama-li',this)"><img src="images/mama-li/Mama Li Jan - Pro-Capture One 1141.jpg" alt="Mama Li" loading="lazy"/><div class="work-item-label"><h3>Mama Li</h3></div><div class="open-indicator">+</div></div>
     <div class="work-item" onclick="toggleGallery('laam-owt',this)"><img src="images/laam-owt/DSC04991.jpg" alt="Laam x OWT" loading="lazy"/><div class="work-item-label"><h3>Laam × OWT</h3></div><div class="open-indicator">+</div></div>
     <div class="work-item" onclick="toggleGallery('chabuddy-sobe',this)"><img src="images/chabuddy-sobe/SoBe Burger - Chabuddy GDSC02869.jpg" alt="Chabuddy G x SoBe Burger" loading="lazy"/><div class="work-item-label"><h3>Chabuddy G × SoBe Burger</h3></div><div class="open-indicator">+</div></div>
     <div class="work-item" onclick="toggleGallery('owt',this)"><img src="images/owt/editied top shadow-6.jpg" alt="OWT" loading="lazy"/><div class="work-item-label"><h3>OWT</h3></div><div class="open-indicator">+</div></div>
@@ -200,7 +200,7 @@
     <div class="work-item" onclick="toggleGallery('waitrose',this)"><img src="images/waitrose/1713613865794-eacfc688-77c4-4b77-92aa-62c7117eaad6_1.jpg" alt="Waitrose Magazine" loading="lazy"/><div class="work-item-label"><h3>Waitrose Magazine</h3></div><div class="open-indicator">+</div></div>
     <div class="work-item" onclick="toggleGallery('casa-coffee',this)"><img src="images/casa-coffee/DSC04092-3.jpg" alt="Casa Coffee" loading="lazy"/><div class="work-item-label"><h3>Casa Coffee</h3></div><div class="open-indicator">+</div></div>
   </div>
- 
+
   <!-- ALL GALLERY PANELS below the grid, full width -->
   <div class="gallery-panel" id="gallery-friends-of-ham">
     <div class="gallery-inner">
@@ -215,7 +215,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('friends-of-ham',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-galipette">
     <div class="gallery-inner">
       <img src="images/galipette/DSC06991.jpg" alt="Galipette" loading="lazy"/>
@@ -224,15 +224,15 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('galipette',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-mama-li">
     <div class="gallery-inner">
-      <img src="images/mama-li/Mama Li 1141.jpg" alt="Mama Li" loading="lazy"/>
+      <img src="images/mama-li/Mama Li Jan - Pro-Capture One 1141.jpg" alt="Mama Li" loading="lazy"/>
       <!-- ADD MORE -->
     </div>
     <div class="gallery-close" onclick="toggleGallery('mama-li',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-laam-owt">
     <div class="gallery-inner">
       <img src="images/laam-owt/DSC04991.jpg" alt="Laam x OWT" loading="lazy"/>
@@ -242,7 +242,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('laam-owt',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-chabuddy-sobe">
     <div class="gallery-inner">
       <img src="images/chabuddy-sobe/SoBe Burger - Chabuddy GDSC02869.jpg" alt="Chabuddy G x SoBe Burger" loading="lazy"/>
@@ -251,7 +251,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('chabuddy-sobe',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-owt">
     <div class="gallery-inner">
       <img src="images/owt/editied top shadow-6.jpg" alt="OWT" loading="lazy"/>
@@ -260,7 +260,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('owt',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-ritz-crackers">
     <div class="gallery-inner">
       <img src="images/ritz-crackers/DSC05988 - edit.png" alt="Ritz Crackers" loading="lazy"/>
@@ -269,7 +269,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('ritz-crackers',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-galipette-cidre">
     <div class="gallery-inner">
       <img src="images/galipette-cidre/Spingingbottle2-HD.gif" alt="Galipette Cidre" loading="lazy"/>
@@ -279,7 +279,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('galipette-cidre',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-little-bao-boy">
     <div class="gallery-inner">
       <img src="images/little-bao-boy/Hero 1.jpg" alt="Little Bao Boy" loading="lazy"/>
@@ -287,7 +287,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('little-bao-boy',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-shop-cuvee">
     <div class="gallery-inner">
       <img src="images/shop-cuvee/DSC06288.jpg" alt="Shop Cuvée" loading="lazy"/>
@@ -296,7 +296,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('shop-cuvee',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-laam">
     <div class="gallery-inner">
       <img src="images/laam/DSC08396.jpg" alt="Laam" loading="lazy"/>
@@ -304,7 +304,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('laam',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-sobe-burger">
     <div class="gallery-inner">
       <img src="images/sobe-burger/SoBe Burger  1879.jpg" alt="SoBe Burger" loading="lazy"/>
@@ -312,7 +312,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('sobe-burger',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-mikos-gyros">
     <div class="gallery-inner">
       <img src="images/mikos-gyros/Pro-Capture One 2352.jpg" alt="Mikos Gyros" loading="lazy"/>
@@ -320,7 +320,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('mikos-gyros',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-hoko">
     <div class="gallery-inner">
       <img src="images/hoko/IMG_2966-2.jpg" alt="HOKO" loading="lazy"/>
@@ -328,7 +328,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('hoko',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-top-cuvee">
     <div class="gallery-inner">
       <img src="images/top-cuvee/DSC06397.jpg" alt="Top Cuvée" loading="lazy"/>
@@ -337,7 +337,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('top-cuvee',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-eat-your-greens">
     <div class="gallery-inner">
       <img src="images/eat-your-greens/DSC03017-2.jpg" alt="Eat Your Greens" loading="lazy"/>
@@ -346,7 +346,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('eat-your-greens',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-brown-and-blond">
     <div class="gallery-inner">
       <img src="images/brown-and-blond/editied top shadow-7.jpg" alt="Brown & Blond" loading="lazy"/>
@@ -355,7 +355,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('brown-and-blond',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-poco">
     <div class="gallery-inner">
       <img src="images/poco/DSC01729 - espresso.jpg" alt="POCO" loading="lazy"/>
@@ -365,7 +365,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('poco',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-ichi-sushi">
     <div class="gallery-inner">
       <img src="images/ichi-sushi/DSC01488.JPG.jpg" alt="Ichi Sushi" loading="lazy"/>
@@ -373,7 +373,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('ichi-sushi',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-owt-leeds">
     <div class="gallery-inner">
       <img src="images/owt-leeds/DSC09266.jpg" alt="OWT Leeds" loading="lazy"/>
@@ -381,7 +381,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('owt-leeds',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-fika-north">
     <div class="gallery-inner">
       <img src="images/fika-north/DSC02889.jpg" alt="Fika North" loading="lazy"/>
@@ -389,7 +389,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('fika-north',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-ride-and-grind">
     <div class="gallery-inner">
       <img src="images/ride-and-grind/editied top shadow-1.jpg" alt="Ride & Grind" loading="lazy"/>
@@ -399,7 +399,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('ride-and-grind',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-love-for-mushroom">
     <div class="gallery-inner">
       <img src="images/love-for-mushroom/DSC03779-3.jpg" alt="Love for Mushroom" loading="lazy"/>
@@ -408,7 +408,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('love-for-mushroom',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-ride-and-grind-coffee">
     <div class="gallery-inner">
       <img src="images/ride-and-grind-coffee/editied top shadow-3.jpg" alt="Ride & Grind Coffee" loading="lazy"/>
@@ -416,7 +416,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('ride-and-grind-coffee',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-waitrose">
     <div class="gallery-inner">
       <img src="images/waitrose/1713613865794-eacfc688-77c4-4b77-92aa-62c7117eaad6_1.jpg" alt="Waitrose Magazine" loading="lazy"/>
@@ -424,7 +424,7 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('waitrose',null,true)">&#8593; Close</div>
   </div>
- 
+
   <div class="gallery-panel" id="gallery-casa-coffee">
     <div class="gallery-inner">
       <img src="images/casa-coffee/DSC04092-3.jpg" alt="Casa Coffee" loading="lazy"/>
@@ -432,14 +432,14 @@
     </div>
     <div class="gallery-close" onclick="toggleGallery('casa-coffee',null,true)">&#8593; Close</div>
   </div>
- 
+
   <footer class="site-footer">
     <div><h4>About</h4><p>Food photographers and content creators working with brands and restaurants to capture stories. Specialising in art direction, photography styling, and animated content for web and social media.</p></div>
     <div><h4>Follow</h4><a href="https://www.instagram.com/clawsimage" target="_blank" rel="noopener">Instagram</a><a href="https://www.behance.net/clawsimage" target="_blank" rel="noopener">Behance</a></div>
     <div><h4>Contact</h4><p>London · Leeds · Yorkshire</p><a href="/cdn-cgi/l/email-protection#accfc0cdd9c8c5cdd5c5d8cdc7c0cddbdec9c2cfc9eccbc1cdc5c082cfc3c1"><span class="__cf_email__" data-cfemail="ed8e818c9889848c9484998c86818c9a9f88838e88ad8a808c8481c38e8280">[email&#160;protected]</span></a><a href="https://wa.me/message/SMGCFNEACSWMI1" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
   </footer>
 </div>
- 
+
 <!-- ══════ CONTACT ══════ -->
 <div id="page-contact" class="page">
   <div class="contact-left">
@@ -478,7 +478,7 @@
     </div>
   </div>
 </div>
- 
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function showPage(name) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -488,9 +488,9 @@
     if (nav) nav.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
- 
+
   let openGallery = null, openThumb = null;
- 
+
   function toggleGallery(id, thumbEl, forceClose) {
     const panel = document.getElementById('gallery-' + id);
     if (!panel) return;
