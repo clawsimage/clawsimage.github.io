@@ -38,8 +38,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .wi .plus{position:absolute;top:.8rem;right:.8rem;width:24px;height:24px;border:1px solid rgba(255,255,255,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:14px;opacity:0;transition:opacity .3s,transform .3s}
 .wi:hover .plus,.wi.open .plus{opacity:1}
 .wi.open .plus{transform:rotate(45deg)}
-.gpanel{display:none;background:#0f0f0f}
-.gpanel.open{display:block}
+.gpanel{visibility:hidden;height:0;overflow:hidden;background:#0f0f0f}
+.gpanel.open{visibility:visible;height:auto;overflow:visible}
 .ginner{columns:3;column-gap:3px;padding:3px 0}
 @media(max-width:768px){.ginner{columns:2}}
 @media(max-width:480px){.ginner{columns:1}}
