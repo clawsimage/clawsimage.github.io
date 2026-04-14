@@ -29,7 +29,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
 @media(max-width:768px){.wgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.wgrid{grid-template-columns:1fr}}
-.wi{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:#111}
+.wi{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:#111;display:block;text-decoration:none}
 .wi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .wi:hover img{transform:scale(1.05)}
 .wi .lbl{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent 50%);display:flex;align-items:flex-end;padding:1rem;opacity:0;transition:opacity .3s}
